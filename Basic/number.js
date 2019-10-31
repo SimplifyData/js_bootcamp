@@ -25,3 +25,12 @@ let age = 26;
 let dog_years = (age + 1) / 7;
 
 console.log(dog_years);
+
+/* What Percent Student got on the test */
+
+let student_score = 18;
+let max_score = 20;
+
+let final_score =  (student_score / max_score) * 100;
+
+console.log(final_score);
