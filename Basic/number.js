@@ -16,6 +16,6 @@ console.log(num_4);
 
 let x = 11;
 
-let num_5 = (x + 2) * num_3; // BODMAS
+let num_5 = (x + 2) * num_3; /* BODMAS */
 
 console.log(num_5);
