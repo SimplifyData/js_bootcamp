@@ -24,3 +24,15 @@ let square = function (num) {
 let result = square(); // undefined
 
 console.log(result); // undefined function return value
+
+let age = 27;
+
+age = undefined ;// it will print undefined
+
+console.log(age);
+
+// use null instead of null
+
+age = null;
+
+console.log(age); // prints null value
