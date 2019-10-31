@@ -32,6 +32,9 @@ console.log(val_2);
  };
 
  freezing_temp = convert_f_to_c(32);
-sixty_eight_temp =convert_f_to_c(68);
+
+ sixty_eight_temp =convert_f_to_c(68);
+
  console.log(freezing_temp);
+
  console.log(sixty_eight_temp);
