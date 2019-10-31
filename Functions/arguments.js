@@ -17,7 +17,7 @@ console.log(get_score_text('Ax', 77));
 // challenge problem
 // total, tip_percentage
 
-let total_payment_for_food = function (total, tip_percent) {
+let total_payment_for_food = function (total = 0, tip_percent = .15) {
     let tip = total * tip_percent
     return ('Total: ' + total + ', Tip: ' + tip)
 };
