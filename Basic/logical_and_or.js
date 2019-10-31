@@ -23,10 +23,9 @@ let is_guest_two_vegan = false;
 // Are least one vegan? = offer some vegan
 // Else : offer anything on the menu.
 
-if (is_guest_one_vegan === true && is_guest_two_vegan === true) {
+if (is_guest_one_vegan && is_guest_two_vegan) {
     console.log("Here is the vegan menu.")
-} else if ((is_guest_one_vegan === true && is_guest_two_vegan === false  ) ||
-    (is_guest_one_vegan === false && is_guest_two_vegan === true)) {
+} else if (is_guest_one_vegan || is_guest_two_vegan === false  ) {
     console.log(' Here is a menu with vegan, and everything else.')
 } else {
     console.log(" Here is the full menu.")
