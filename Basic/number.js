@@ -19,3 +19,9 @@ let x = 11;
 let num_5 = (x + 2) * num_3; /* BODMAS */
 
 console.log(num_5);
+
+let age = 26;
+
+let dog_years = (age + 1) / 7;
+
+console.log(dog_years);
