@@ -31,7 +31,7 @@ console.log(`my name is ${name}`); // injecting variable in a string by using
 // template strings: `` which is right below ESC button
 
 let tip_func = function (total = 0, tip_percent = .15) {
-    return `A ${tip_percent} tip on ${total} is ${total * tip_percent}`
+    return `A ${tip_percent * 100}% tip on ${total} is ${total * tip_percent}`
 };
 
 console.log(tip_func(100));
