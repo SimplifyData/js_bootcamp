@@ -30,6 +30,9 @@ console.log(temp_greater_than);
 // print senior value
 
 let age = 27;
+let age_1 = 70;
+let age_2 = 5;
+
 
 let is_child = age <= 7;
 
@@ -38,3 +41,29 @@ let is_senior = age >= 65;
 console.log(is_child);
 
 console.log(is_senior);
+
+
+// if statements () is where condition goes
+// and {} where the code block goes
+
+if (is_freezing) {
+    console.log('It is freezing outside!')
+}
+
+if (temperature <= 32){
+    console.log(('It is freezing!!'))
+}
+
+let temp_1 = 56;
+
+if (temp_1 >= 32) {
+    console.log(' it is not freezing, it may be warmer outside')
+}
+
+if (age_2 <= 7) {
+    console.log(' Discount on cookies today!')
+}
+
+if (age_1 >= 65) {
+    console.log(' You will get a Senior Discount!')
+}
