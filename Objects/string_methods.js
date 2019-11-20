@@ -22,13 +22,7 @@ console.log(name.trim());
 // length is more than 8 and it does not contain word password
 
 let is_valid_password = function (passphrase) {
-    if (passphrase.length <= 8 || passphrase.includes('password')){
-
-        return false
-    }
-    else {
-        return true
-    }
+    return  passphrase.length > 8 && !passphrase.includes('password')
 };
 
 console.log(is_valid_password('1234gd'));
