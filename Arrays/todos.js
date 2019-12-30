@@ -17,3 +17,30 @@ for (let count = 0; count < todos.length; count++) {
     console.log(`${count + 1}. ${todos[count]}`)
 }
 
+// return todo that are incomplete
+
+const todo_1 = [{
+    text: "Cat Food",
+    completed: true
+}, {
+    text: 'Clean Kitchen',
+    completed: false
+}, {
+    text: 'Buy Food',
+    completed: true
+}, {
+    text: 'Do work',
+    completed: false
+}, {
+    text: 'Exercise',
+    completed: true
+}];
+
+const incomplete_todo = function (todos) {
+    return todos.filter(function (todo) {
+        return !todo.completed
+    })
+};
+
+console.log(incomplete_todo(todo_1))
+
