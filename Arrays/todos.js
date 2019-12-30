@@ -17,7 +17,7 @@ for (let count = 0; count < todos.length; count++) {
     console.log(`${count + 1}. ${todos[count]}`)
 }
 
-// return todo that are incomplete
+/** return todo that are incomplete **/
 
 const todo_1 = [{
     text: "Cat Food",
@@ -34,7 +34,7 @@ const todo_1 = [{
 }, {
     text: 'Exercise',
     completed: true
-}];
+}]
 
 const incomplete_todo = function (todos) {
     return todos.filter(function (todo) {
@@ -44,3 +44,20 @@ const incomplete_todo = function (todos) {
 
 console.log(incomplete_todo(todo_1))
 
+/** sort todo **/
+
+const sort_todos = function (todos) {
+    todos.sort(function (a,b) {
+        if (!a.completed && b.completed) {
+            return -1
+        } else if (!b.completed && a.completed) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+};
+
+sort_todos(todo_1)
+
+console.log(todo_1)
