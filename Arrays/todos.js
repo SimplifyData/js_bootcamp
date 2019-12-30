@@ -16,3 +16,4 @@ console.log("You have the following items in you TODO List")
 for (let count = 0; count < todos.length; count++) {
     console.log(`${count + 1}. ${todos[count]}`)
 }
+
