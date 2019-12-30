@@ -61,3 +61,46 @@ const sort_todos = function (todos) {
 sort_todos(todo_1)
 
 console.log(todo_1)
+
+// Challenge
+
+const account = {
+    name:" Adam Yoyo",
+    expenses: [],
+    income: [],
+    add_expenses: function (description, amount){
+        this.expenses.push({
+            description: description,
+            amount: amount
+        })
+    },
+
+    add_income : function (description, amount) {
+        this.income.push({
+            description: description,
+            amount: amount
+        })
+    },
+    get_account_summary: function () {
+        let total_expenses = 0
+        this.expenses.forEach(function (expense) {
+            total_expenses = total_expenses + expense.amount
+
+        })
+
+        let total_income = 0
+        this.income.forEach(function (income) {
+            total_income = total_income + income.amount
+        })
+        return `${this.name} has a balance of $${total_income - total_expenses}. $${total_income} in Income and $${total_expenses} in expenses`
+
+    }
+}
+// add income array to account
+// add income method >> description, amount
+// tweak get account summary
+// adadm yoyo has balance of $10. $100 in income and 90 in expenses
+account.add_expenses("Rent",950)
+account.add_expenses('Coffee', 5)
+account.add_income("freelance", 2000)
+console.log(account.get_account_summary())
