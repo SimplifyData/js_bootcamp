@@ -14,3 +14,8 @@ ps.forEach(function (p){
 })
 
 console.log(p)
+
+// add a new element
+const new_paragraph = document.createElement('p');
+new_paragraph.textContent = 'This is a new paragraph for JavaScript';
+document.querySelector('body').appendChild(new_paragraph);
