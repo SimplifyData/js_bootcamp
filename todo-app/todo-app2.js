@@ -1,3 +1,4 @@
+/**
 const todos_1 = [{
     text: 'Order cat food',
     completed: false
@@ -14,46 +15,16 @@ const todos_1 = [{
     text: 'Exercise',
     completed: true
 }]
+**/
 
-let todos = []
+
+const todos = get_saved_todos()
 
 const filters = {
     searchText: '',
     hide_completed: false
 }
 
-const todo_json = localStorage.getItem('todos')
-
-if (todo_json !== null) {
-    todos = JSON.parse(todo_json)
-}
-
-const renderTodos = function (todos, filters) {
-    let filteredTodos = todos.filter(function (todo) {
-        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
-
-    filteredTodos = filteredTodos.filter(function (todo) {
-        return !filters.hide_completed || !todo.completed
-
-    })
-
-    const incompleteTodos = filteredTodos.filter(function (todo) {
-        return !todo.completed
-    })
-
-    document.querySelector('#todos').innerHTML = ''
-
-    const summary = document.createElement('h2')
-    summary.textContent = `You have ${incompleteTodos.length} todos left`
-    document.querySelector('#todos').appendChild(summary)
-
-    filteredTodos.forEach(function (todo) {
-        const p = document.createElement('p')
-        p.textContent = todo.text
-        document.querySelector('#todos').appendChild(p)
-    })
-}
 
 renderTodos(todos, filters)
 
@@ -78,7 +49,7 @@ document.querySelector('#new_todo').addEventListener('submit', function (e) {
         text: e.target.elements.text.value,
         completed: false
     })
-    localStorage.setItem('todos', JSON.stringify(todos))
+    saved_todos(todos)
     renderTodos(todos,filters)
     e.target.elements.text.value = ''
 

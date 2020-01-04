@@ -1,5 +1,5 @@
-// existing notes from local storage
 
+// existing notes from local storage
 const get_saved_notes = function () {
     const note_json = localStorage.getItem('notes');
 
@@ -10,8 +10,8 @@ const get_saved_notes = function () {
     }
 }
 
-// Generate the DOM structure for a note
 
+// Generate the DOM structure for a note
 const generate_note_dom = function (note) {
     const note_el = document.createElement('p')
 
@@ -23,4 +23,21 @@ const generate_note_dom = function (note) {
 
     return note_el
 
+}
+
+
+// Render application notes
+const render_notes = function(notes, filters){
+    const filtered_notes = notes.filter(function (note) {
+        return note.title.toLowerCase().includes(filters.search_text.toLowerCase())
+
+    })
+    document.querySelector('#notes').innerHTML = '<p> TEST </p>'
+
+    filtered_notes.forEach(function (note) {
+
+        const note_el = generate_note_dom(note)
+        document.querySelector('#notes').appendChild(note_el)
+
+    })
 }
