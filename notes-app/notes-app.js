@@ -1,4 +1,4 @@
-const notes = [{
+const notes_1 = [{
     title: ' My next trip',
     body: 'I would like to go to Spain'
 },{
@@ -11,9 +11,37 @@ const notes = [{
 
 console.log("This is from a diffe");
 
+const notes = get_saved_notes()
+
+
+
 const filters = {
     search_text:''
 };
+
+// localStorage.setItem('location', 'Seattle')
+
+// console.log(localStorage.getItem('location'))
+
+// localStorage.removeItem('location')
+
+const  user = {
+    name: 'Andrew',
+    age: 27
+}
+
+
+
+const user_json = JSON.stringify(user)
+console.log(user_json)
+
+localStorage.setItem("user",user_json)
+
+const user_json_output = localStorage.getItem('user')
+
+const user_output = JSON.parse(user_json_output)
+
+console.log(`${user_output.name} is ${user_output.age}`)
 
 const render_notes = function(notes, filters){
     const filtered_notes = notes.filter(function (note) {
@@ -23,8 +51,8 @@ const render_notes = function(notes, filters){
     document.querySelector('#notes').innerHTML = '<p> TEST </p>'
 
     filtered_notes.forEach(function (note) {
-        const note_el = document.createElement('p')
-        note_el.textContent = note.title
+
+        const note_el = generate_note_dom(note)
         document.querySelector('#notes').appendChild(note_el)
 
     })
@@ -66,8 +94,14 @@ document.querySelectorAll('button')[1].addEventListener('click', function(e){
 
 // query by button ID
 document.querySelector('#create_note').addEventListener('click', function (e){
-    console.log(e)
+
     e.target.textContent = 'The Button was Clicked'
+    notes.push({
+        title:'',
+        body:''
+    })
+    localStorage.setItem('notes', JSON.stringify(notes))
+    render_notes(notes,filters)
 })
 
 
@@ -87,5 +121,10 @@ document.querySelector('#name-form').addEventListener('submit', function (e) {
     e.preventDefault()
     console.log(e.target.elements.firstName.value)
     e.target.elements.firstName.value = ''
+
+})
+
+document.querySelector('#filter_by').addEventListener('change', function (e) {
+    console.log(e.target.value)
 
 })

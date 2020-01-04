@@ -8,7 +8,11 @@
 <body>
     <h1>Notes App</h1>
     <h2>Take Notes and Never Forget</h2>
-    <
+    <select id="filter_by">
+        <option value="by_edited"> Sort By last Edited</option>
+        <option value="by_created">Sort By Recently Created</option>
+        <option value="alphabetical">Sort Alphabetically</option>
+    </select>
     <input id="search_text" type="text" placeholder="Filter Input">
     <div id="notes"></div>
     <p class="note"> The note taking app is awesomer</p>
@@ -20,6 +24,7 @@
         <input type="text" placeholder="First Name" name"firstName>
         <button>Submit</button>
     </form>
+    <script src = "notes_functions.js"></script>
     <script src = "notes-app.js"></script>
 </body>
 </html>
