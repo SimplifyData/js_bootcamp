@@ -54,7 +54,6 @@ document.querySelector('#new_todo').addEventListener('submit', function (e) {
     e.target.elements.text.value = ''
 
 })
-debugger
 document.querySelector("#hide_completed").addEventListener("change", function (e) {
     filters.hide_completed = e.target.checked
     renderTodos(todos,filters)
